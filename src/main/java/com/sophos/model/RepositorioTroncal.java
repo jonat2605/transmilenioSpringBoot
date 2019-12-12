@@ -4,9 +4,10 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.sophos.entity.Estacion;
+import com.sophos.entity.Troncal;
 
 @Component
 @Service
-public interface RepositorioEstacion extends CrudRepository<Estacion, String>{	
+public interface RepositorioTroncal extends CrudRepository<Troncal, String>{
+
 }

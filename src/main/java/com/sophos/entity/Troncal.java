@@ -35,11 +35,11 @@ public class Troncal implements Serializable{
 		this.id = id;
 	}
 
-	public String getNombre() {
+	public String getCodTroncal() {
 		return codTroncal;
 	}
 
-	public void setNombre(String nombre) {
+	public void setCodTroncal(String nombre) {
 		this.codTroncal = nombre;
 	}
 	

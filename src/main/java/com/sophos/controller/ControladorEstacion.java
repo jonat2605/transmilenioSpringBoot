@@ -73,10 +73,7 @@ public class ControladorEstacion {
 	 @GetMapping(value = "api/estacion/{codEstacion}")
 	 public ResponseEntity<Estacion> obtenerEstacion(@PathVariable String codEstacion){
 		Optional<Estacion> estacion = repositorioEstacion.findById(codEstacion);
-		if(estacion.isPresent())
-			return new ResponseEntity<Estacion>(estacion.get(), HttpStatus.OK);
-		else
-			return new ResponseEntity<Estacion>(HttpStatus.NOT_FOUND);
+		 return estacion.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
 	 }
 	 
 	 @GetMapping(value = "api/estaciones")

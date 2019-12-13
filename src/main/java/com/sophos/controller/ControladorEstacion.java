@@ -37,8 +37,8 @@ public class ControladorEstacion {
 		if (message == null) {
 			if (comprobarCodTroncal(estacion.getCodTroncal())) {
 				if (comprobarId(estacion.getCodEstacion())) {
-					char[] tamañoCodigo = estacion.getCodEstacion().toCharArray();
-					if (tamañoCodigo.length == 3) {
+					char[] charsCodigo = estacion.getCodEstacion().toCharArray();
+					if (charsCodigo.length == 3) {
 						repositorioEstacion.save(estacion);
 						message = new MessageResponse("Estación agregada con éxito", 201);
 						return new ResponseEntity<MessageResponse>(message, HttpStatus.CREATED);
